@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+}
+body{
+    display: flex;
+    min-height: 100vh;  
+    background-color:#282C40;
+}
+
+main{
+    padding:45px;
+}
+
+#sidebar{
+    display: flex;
+    flex-direction: column;
+    background-color: #3c4972;
+    justify-content: space-between;
+    height: 100vh;
+    transition: all .5s;
+    min-width: 82px;
+
+}
+
+#sidebar_content{
+    padding: 12px ; 
+}
+
+
+#menu img{
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+}
+
+#menu{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+#menu button{
+    background-color: #3c4972;
+    border: none;
+    cursor: pointer;
+}
+
+#open_btn img{
+    transition: transform .3s ease;
+}
+
+.open-sidebar #open_btn img{
+    transform: rotate(180deg) ;
+}
+
+
+
+#menu_infos{
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+}
+
+
+#side_itens{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+}
+
+#side_itens hr{
+    border: none;
+    border-bottom: 2px dotted white;    
+}
+
+.item{
+    padding: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.item:hover{
+    background-color: #6f92bf;
+    transform: scale(1.05);
+
+}
+
+.item a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    
+}
+
+.item a img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.item_description{
+    width: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    transition: width .6s;
+    height: 0px;
+}
+
+#sidebar.open-sidebar{
+    min-width: 15%;
+
+}
+
+#sidebar.open-sidebar .item_description{
+    width: 150px;
+    height: auto;
+}
+
+#sidebar.open-sidebar .side_itens a{
+      justify-content: flex-start;
+      gap: 14px;
+}
